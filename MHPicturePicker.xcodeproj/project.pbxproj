@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6C2B0C1C1BFECA5500C759C6 /* MHPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2B0C1B1BFECA5500C759C6 /* MHPictureView.m */; };
+		6C11FE111C077C4100B2889D /* KPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C11FE101C077C4100B2889D /* KPictureView.m */; };
+		6C11FE141C0789DC00B2889D /* UIImageView+MHImageWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C11FE131C0789DC00B2889D /* UIImageView+MHImageWebCache.m */; };
+		6C222E9A1C05A4F9000BBB95 /* lucency_bg_for_picture_view.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C222E971C05A4F9000BBB95 /* lucency_bg_for_picture_view.png */; };
+		6C222E9B1C05A4F9000BBB95 /* MHPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C222E991C05A4F9000BBB95 /* MHPictureView.m */; };
 		6CAD9C6D1BE0BF1B0080658B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD9C6C1BE0BF1B0080658B /* main.m */; };
 		6CAD9C701BE0BF1B0080658B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD9C6F1BE0BF1B0080658B /* AppDelegate.m */; };
 		6CAD9C731BE0BF1B0080658B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD9C721BE0BF1B0080658B /* ViewController.m */; };
@@ -15,12 +18,17 @@
 		6CAD9C781BE0BF1B0080658B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CAD9C771BE0BF1B0080658B /* Assets.xcassets */; };
 		6CAD9C7B1BE0BF1B0080658B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CAD9C791BE0BF1B0080658B /* LaunchScreen.storyboard */; };
 		6CAD9C851BE0C2100080658B /* mm.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CAD9C841BE0C2100080658B /* mm.png */; };
-		6CE320051BFEFDE600325011 /* lucency_bg_for_picture_view.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CE320041BFEFDE600325011 /* lucency_bg_for_picture_view.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6C2B0C1A1BFECA5500C759C6 /* MHPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHPictureView.h; sourceTree = "<group>"; };
-		6C2B0C1B1BFECA5500C759C6 /* MHPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHPictureView.m; sourceTree = "<group>"; };
+		6C11FE0F1C077C4100B2889D /* KPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPictureView.h; sourceTree = "<group>"; };
+		6C11FE101C077C4100B2889D /* KPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPictureView.m; sourceTree = "<group>"; };
+		6C11FE121C0789DC00B2889D /* UIImageView+MHImageWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MHImageWebCache.h"; sourceTree = "<group>"; };
+		6C11FE131C0789DC00B2889D /* UIImageView+MHImageWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MHImageWebCache.m"; sourceTree = "<group>"; };
+		6C222E971C05A4F9000BBB95 /* lucency_bg_for_picture_view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lucency_bg_for_picture_view.png; path = libs/lucency_bg_for_picture_view.png; sourceTree = "<group>"; };
+		6C222E981C05A4F9000BBB95 /* MHPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHPictureView.h; path = libs/MHPictureView.h; sourceTree = "<group>"; };
+		6C222E991C05A4F9000BBB95 /* MHPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHPictureView.m; path = libs/MHPictureView.m; sourceTree = "<group>"; };
+		6C5D29181C046E7B008E0415 /* DEFINE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DEFINE.h; sourceTree = "<group>"; };
 		6CAD9C681BE0BF1B0080658B /* MHPicturePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MHPicturePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAD9C6C1BE0BF1B0080658B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6CAD9C6E1BE0BF1B0080658B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -32,7 +40,6 @@
 		6CAD9C7A1BE0BF1B0080658B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6CAD9C7C1BE0BF1B0080658B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CAD9C841BE0C2100080658B /* mm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mm.png; sourceTree = "<group>"; };
-		6CE320041BFEFDE600325011 /* lucency_bg_for_picture_view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lucency_bg_for_picture_view.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,12 +53,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C11FE0E1C077C0800B2889D /* K */ = {
+			isa = PBXGroup;
+			children = (
+				6C11FE0F1C077C4100B2889D /* KPictureView.h */,
+				6C11FE101C077C4100B2889D /* KPictureView.m */,
+			);
+			name = K;
+			sourceTree = "<group>";
+		};
 		6C2FBFE01BE0C87200CB9318 /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				6C2B0C1A1BFECA5500C759C6 /* MHPictureView.h */,
-				6C2B0C1B1BFECA5500C759C6 /* MHPictureView.m */,
-				6CE320041BFEFDE600325011 /* lucency_bg_for_picture_view.png */,
+				6C222E971C05A4F9000BBB95 /* lucency_bg_for_picture_view.png */,
+				6C222E981C05A4F9000BBB95 /* MHPictureView.h */,
+				6C222E991C05A4F9000BBB95 /* MHPictureView.m */,
 			);
 			name = libs;
 			sourceTree = "<group>";
@@ -75,6 +91,10 @@
 		6CAD9C6A1BE0BF1B0080658B /* MHPicturePicker */ = {
 			isa = PBXGroup;
 			children = (
+				6C11FE121C0789DC00B2889D /* UIImageView+MHImageWebCache.h */,
+				6C11FE131C0789DC00B2889D /* UIImageView+MHImageWebCache.m */,
+				6C11FE0E1C077C0800B2889D /* K */,
+				6C5D29181C046E7B008E0415 /* DEFINE.h */,
 				6C2FBFE01BE0C87200CB9318 /* libs */,
 				6CAD9C841BE0C2100080658B /* mm.png */,
 				6CAD9C6E1BE0BF1B0080658B /* AppDelegate.h */,
@@ -157,7 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CAD9C851BE0C2100080658B /* mm.png in Resources */,
-				6CE320051BFEFDE600325011 /* lucency_bg_for_picture_view.png in Resources */,
+				6C222E9A1C05A4F9000BBB95 /* lucency_bg_for_picture_view.png in Resources */,
 				6CAD9C7B1BE0BF1B0080658B /* LaunchScreen.storyboard in Resources */,
 				6CAD9C781BE0BF1B0080658B /* Assets.xcassets in Resources */,
 				6CAD9C761BE0BF1B0080658B /* Main.storyboard in Resources */,
@@ -173,8 +193,10 @@
 			files = (
 				6CAD9C731BE0BF1B0080658B /* ViewController.m in Sources */,
 				6CAD9C701BE0BF1B0080658B /* AppDelegate.m in Sources */,
+				6C222E9B1C05A4F9000BBB95 /* MHPictureView.m in Sources */,
 				6CAD9C6D1BE0BF1B0080658B /* main.m in Sources */,
-				6C2B0C1C1BFECA5500C759C6 /* MHPictureView.m in Sources */,
+				6C11FE111C077C4100B2889D /* KPictureView.m in Sources */,
+				6C11FE141C0789DC00B2889D /* UIImageView+MHImageWebCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

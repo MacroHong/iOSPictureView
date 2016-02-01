@@ -7,18 +7,18 @@
 //
 
 #import "MHPictureView.h"
+#import "DEFINE.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import <AVFoundation/AVCaptureDevice.h>
 
 
 @interface MHPictureView ()<UIActionSheetDelegate,
-UINavigationControllerDelegate,
-UIImagePickerControllerDelegate,
-UIAlertViewDelegate>
+                            UINavigationControllerDelegate,
+                            UIImagePickerControllerDelegate,
+                            UIAlertViewDelegate>
 {
     UIImagePickerController *_imagePickerController;
-    BOOL _alertViewIsShow;
 }
 @end
 
@@ -50,24 +50,45 @@ UIAlertViewDelegate>
     return self;
 }
 
+#pragma mark - api
+
+//- (void)setImage:(UIImage *)image {
+//    [super setImage:image];
+//    _imgData = UIImageJPEGRepresentation(image, 1.0);
+//}
+
+- (void)setImageWithData:(NSData *)imageData {
+    UIImage *image = [UIImage imageWithData:imageData];
+    self.image = image;
+    _imgData = imageData;
+
+}
+
 
 #pragma mark - local method
 
+/*!
+ *  @author Macro QQ:778165728, 15-11-26
+ *
+ *  @brief  初始化全局变量
+ */
 - (void)config {
-    _alertViewIsShow = NO;
+    _canDelete = YES;
     self.userInteractionEnabled = YES;
     [self setDefaultBackGround];
+    // 添加点击手势 用于查看或者拍照
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(tapAction)];
     [self addGestureRecognizer:tap];
-    
+    // 添加长按手势弹框提示删除
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]
                                                initWithTarget:self
                                                action:@selector(longPress:)];
     [self addGestureRecognizer:longPress];
     
 }
+
 
 - (void)setDefaultBackGround {
     UIImage *image = [UIImage imageNamed:@"image_bg"];
@@ -124,7 +145,7 @@ UIAlertViewDelegate>
 
 - (void)longPress:(UILongPressGestureRecognizer *)longPress {
     NSLog(@"long press delete image");
-    if (![self imageIsEmpty]) {
+    if (![self imageIsEmpty] && _canDelete) {
         UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"是否确认删除图片?" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
         [self removeGestureRecognizer:longPress];
         [av show];
@@ -143,7 +164,7 @@ UIAlertViewDelegate>
         self.image = [UIImage imageNamed:@"lucency_bg_for_picture_view"];
         [self setDefaultBackGround];
         if (self.deletePictureBlock) {
-            self.deletePictureBlock();
+            self.deletePictureBlock(self.imgData);
         }
     }
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]
@@ -231,10 +252,22 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
                                completion:^{}];
     // 获取到的图片
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    NSData *imgData = UIImageJPEGRepresentation(image, 0.0);
-    UIImage *pressImage = [UIImage imageWithData:imgData];
+    
+    
+    CGSize newSize = CGSizeMake(kWidth, kHeight);
+    UIGraphicsBeginImageContext(newSize);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
 
+    // 压缩图片 减少程序crash几率
+    NSData *imgData = UIImageJPEGRepresentation(newImage, 0.0);
+    _imgData = imgData;
+    UIImage *pressImage = [UIImage imageWithData:imgData];
     self.image = pressImage;
+    if (self.takeSuccessBlock) {
+        self.takeSuccessBlock(self.imgData);
+    }
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
